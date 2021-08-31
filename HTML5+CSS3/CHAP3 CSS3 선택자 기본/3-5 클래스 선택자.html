@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* class 속성값으로 select를 가지는 태그의 color 속성에 red 키워드를 적용 */
+        .select { color: red; }
+
+        .item { color: green;}
+        .header { background-color: blue; }
+
+        li.select2 { color: orange; }
+    </style>
+</head>
+<body>
+    <ul>
+        <!-- 클래스 선택자 -->
+        <li class="select">Lorem ipsum</li>
+        <li>Lorem ipsum</li>
+        <li class="select">Lorem ipsum</li>
+        <li>Lorem ipsum</li>
+
+        <!-- 여러개의 클래스 선택자 사용 -->
+        <h1 class="item header">Lorem ipsum</h1>
+
+        <!-- 태그 & 클래스 선택자 -->
+        <h1 class="select2">Lorem ipsum</h1>
+        <ul>
+            <li class="select2">Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+        </ul>
+
+    </ul>
+</body>
+</html>
