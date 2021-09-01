@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lotto 번호 추출기</title>
+    <style>
+      div {
+        background-color: lightskyblue;
+        height: 70px;
+        width: 500px;
+        padding: 10px;
+        text-align: center;
+      }
+      .number {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        color: black;
+        background: yellow;
+        padding: 5px;
+        margin: 10px;
+        font-size: 30px;
+        font-weight: bold;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        var lotto = [];
+        var getLottoNum = function () {
+          while (true) {
+            var num = parseInt(Math.random() * 45 + 1);
+            if (lotto.indexOf(num) == -1) {
+              // 처음 나온 숫자면 반복 종료
+              break;
+            }
+          }
+          lotto.push(num);
+          var span = document.createElement('span');
+          span.setAttribute('class', 'number');
+          span.appendChild(document.createTextNode(num));
+          document.getElementById('result').appendChild(span);
+
+          if (lotto.length >= 6) {
+            clearInterval(repeat);
+          }
+        };
+        var repeat = setInterval(getLottoNum, 1000);
+      };
+    </script>
+  </head>
+  <body>
+    <fieldset>
+      <h3>대박을 기원합니다~~</h3>
+      <div id="result"></div>
+    </fieldset>
+  </body>
+</html>
