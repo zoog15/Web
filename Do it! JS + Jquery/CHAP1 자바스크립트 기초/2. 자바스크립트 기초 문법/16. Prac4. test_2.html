@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var price1 = 1200;
+        var price2 = 1300;
+        var price3 = 1000;
+
+        var avg_price = (price1+price2+price3)/3; // 이전의 평균 판매량
+
+        var price4 = prompt("4분기 판매량은?","0");
+
+        var result = price4 >= avg_price ? "판매량이 평균 이상입니다." : "판매량이 평균 미달입니다.";
+
+        document.write("4분기 평균 판매량 : "+price4,"<br>");
+        document.write("이전분기 평균 판매량 : "+avg_price,"<br>");
+        document.write(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
