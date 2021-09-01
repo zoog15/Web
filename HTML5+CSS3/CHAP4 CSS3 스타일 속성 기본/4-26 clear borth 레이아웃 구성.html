@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        #aside {
+            float: left;
+            width: 260px;
+        }
+
+        #section {
+            float: right;
+            width: 700px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"><h1>Header</h1></div>
+    <div id="navigation"><h1>Navigation</h1></div>
+    <div class="clear"></div> <!-- 사용하지 않아도 문제 없음 -->
+
+    <div id="aside">
+        <h1>Aside</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </div>
+    <div id="section">
+        <h1>Section</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing  elit.</p>
+    </div>
+    <div class="clear"></div> <!-- 가로로 자를수 있는 부분에 넣어주기 -->
+
+    <div id="footer"><h1>Footer</h1></div>
+    <div class="clear"></div> <!-- 사용하지 않아도 문제 없음 -->
+</body>
+</html>
