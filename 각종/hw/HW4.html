@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      #calc {
+        border: 1px solid gray;
+        width: 350px;
+        text-align: center;
+      }
+      #formula {
+        text-align: right;
+        width: 80%;
+        margin: 20px;
+      }
+      button {
+        width: 70px;
+        height: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="calc">
+      <input id="formula" type="text" value="" placeholder="0" readonly />
+      <div id="pad">
+        <button onclick="addNum(7)">7</button>
+        <button onclick="addNum(8)">8</button>
+        <button onclick="addNum(9)">9</button>
+        <button onclick="addOper('+')">+</button>
+        <button onclick="addNum(4)">4</button>
+        <button onclick="addNum(5)">5</button>
+        <button onclick="addNum(6)">6</button>
+        <button onclick="addOper('-')">-</button>
+        <button onclick="addNum(1)">1</button>
+        <button onclick="addNum(2)">2</button>
+        <button onclick="addNum(3)">3</button>
+        <button onclick="addOper('*')">*</button>
+        <button onclick="addNum(0)">0</button>
+        <button onclick="reset()">CE</button>
+        <button onclick="calc()">=</button>
+        <button onclick="addOper('/')">/</button>
+      </div>
+      <div id="resultDiv">
+        <h2>결 과 이 력</h2>
+        <p id="result"></p>
+      </div>
+    </div>
+    <script>
+      var count = 1;
+      var preIsNum = false;
+      //   var fo = document.getElementById('formula');
+      var fo = document.getElementById('formula');
+      var result = document.getElementById('result');
+      function addNum(n) {
+        // 숫자 입력시 화면에 출력
+
+        if (fo.value == '' && n == 0) return;
+        fo.value += n;
+        preIsNum = true;
+      }
+      function addOper(oper) {
+        // 연산자 입력시 저장하기
+        if (preIsNum == false) return;
+        fo.value += oper;
+        preIsNum = false;
+      }
+      function calc() {
+        if (preIsNum == false) return;
+        result.innerHTML += count++ + '. ' + fo.value + '=' + eval(fo.value) + '<br>';
+        fo.value = '';
+        preIsNum = false;
+      }
+      function reset() {
+        fo.value = '';
+        preIsNum = false;
+      }
+    </script>
+  </body>
+</html>
