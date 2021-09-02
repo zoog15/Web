@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var today = new Date();
+        var nowYear = today.getFullYear();
+
+        // 올해 연말에 대한 날짜 정보 객체 생성
+        var theDate = new Date(nowYear, 11, 31);
+        // 남은 날 = 특정 날짜 - 현재 날짜(밀리초 단위)
+        var diffDate = theDate.getTime() - today.getTime();
+
+        var result = Math.ceil(diffDate/(60*1000*60*24));
+        document.write("연말 D-day: " + result + "일 남았습니다.");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
