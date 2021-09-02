@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function(){
+            $(".btn1").on({
+                // Mouse over, Mose out 버튼에 마우스 포인터를 올리면 class 값이 txt1인 요소의 배경색을 노란색으로 변경
+                "mouseover" :function(){
+                    $(".txt1").css({"background-color":"yellow"});
+                },
+                // 버튼에서 마우스 포인터가 벗어나면 배경 색을 다시 제거
+                "mouseout":function(){
+                    $(".txt1").css({"background":"none"});
+                }
+            });
+
+            $(".btn2").hover(
+                function(){$(".txt2").css({"background-color":"aqua"});},
+                function(){$(".txt2").css({"background":"none"})}
+            );
+        })
+    </script>
+</head>
+<body>
+    <p>
+        <button class="btn1">Mouse Over/Mouse Out</button>
+    </p>
+    <p class="txt1">내용1</p>
+    <p>
+        <button class="btn2">Hover</button>
+    </p>
+    <p class="txt2">내용2</p>
+</body>
+</html>
