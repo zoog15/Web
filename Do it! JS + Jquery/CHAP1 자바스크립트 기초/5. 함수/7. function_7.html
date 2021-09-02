@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 객체 생성자의 함수명은 가능하면 대문자로 만들기
+        function CheckWeight(name, height, weight){
+            // 생성한 객체에 이름, 키 , 몸무게 등의 속성을 등록
+            this.userName = name;
+            this.userHeight = height;
+            this.userWeight = weight;
+            this.minWeight;
+            this.maxWeight;
+        }
+
+        this.getInfo = function(){
+            var str = "";
+            str += "이름: "+ this.userName +", ";
+            str += "키: " + this.userHeight + ", ";
+            str += "몸무게: " + this.userWeight + "<br>";
+            return str;
+        }
+
+        this.getResult = function(){
+            this.minWeight = (this.userHeight - 100) * 0.9 - 5;
+            this.maxWeight = (this.userHeight - 100) * 0.9 + 5;
+
+            if (this.userWeight >= this.minWeight && this.userWeight <= this.maxWeight){
+                return "정상 몸무게입니다.";
+            } else if (this.userWeight < this.minWeight){
+                return "정상 몸무게보다 미달입니다.";
+            } else{
+                return "정상 몸무게보다 초과입니다.";
+            }
+        }
+
+        var jang = new CheckWeight("장보리",168,82);
+        var park = new CheckWeight("박달재",180,88);
+        console.log(jang);
+        console.log(park);
+
+        document.write(jang.getInfo());
+        document.write(jang.getResult());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
