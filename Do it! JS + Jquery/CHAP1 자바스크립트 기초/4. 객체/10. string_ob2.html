@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var userEmail = prompt("당신의 이메일 주소는?","");
+        var arrUrl = [".co.kr",".com",".net",".or.kr",".go.kr"];
+
+        var check1 = false;
+        var check2 = false;
+
+        // @가 정상적으로 있으면 check1에 true
+        if (userEmail.indexOf("@") > 0) {check1 = true;}
+
+        for(var i = 0; i<arrUrl.length;i++){
+            // arrUrl과 비교해 1개의 단어라도 일치하면 check2에 true를 저장
+            if(userEmail.indexOf(arrUrl[i])>0){
+                check2 = true;
+            }
+        }
+
+        if (check1 && check2){
+            document.write(userEmail);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
