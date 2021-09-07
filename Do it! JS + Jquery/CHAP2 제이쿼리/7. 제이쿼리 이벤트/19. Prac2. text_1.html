@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function(){
+            var beforeMenu = null;
+
+
+            // gnb의 자식 button의 자식 <a>에 마우스를 올리거나 포커스가 가면 이벤트 발생
+            $(".gnb>button>a").on("mouseover focus",function(){
+                if(beforeMenu) beforeMenu.css({background:"none"});
+                $(this).css({"background-color":"#0ff"});
+                beforeMenu = $(this);
+            })
+
+            // 마우스 포인터가 class값이 gnb인 요소를 벗어나면 원래의 색으로 돌아옴
+            $(".gnb").on("mouseleave",function(){
+                if(beforeMenu) beforeMenu.css({background:"none"});
+            })
+        });
+    </script>
+</head>
+<body>
+    <ul class="gnb">
+        <button><a href="#">menu1</a></button>
+        <button><a href="#">menu2</a></button>
+        <button><a href="#">menu3</a></button>
+        <button><a href="#">menu4</a></button>
+    </ul>
+</body>
+</html>
