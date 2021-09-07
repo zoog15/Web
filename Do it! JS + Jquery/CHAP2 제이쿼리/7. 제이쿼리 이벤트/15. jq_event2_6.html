@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function(){
+            // 이벤트를 등록하고 class 값을 생성하면 이벤트가 정상적으로 등록 안됨
+            $(".btn_1.on").on("mouseover focus",function(){
+                alert("HELLO!");
+            });
+            $(".btn_1").addClass("on");
+
+            // 라이브 이벤트 등록 방식으로 이벤트를 등록한 다음 class값 생성하면 이벤트가 정상적으로 등록
+            $(document).on("mouseover focus",".btn_2.on",function(){
+                alert("WELCOME!");
+            });
+            $(".btn_2").addClass("on");
+        })
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <p><button class="btn_1">버튼_1</button></p>
+        <p><button class="btn_2">버튼_2</button></p>
+    </div>
+</body>
+</html>
