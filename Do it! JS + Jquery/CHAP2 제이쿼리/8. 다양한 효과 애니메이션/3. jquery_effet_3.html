@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function(){
+            $(".txt1").animate({marginLeft:"300px"},1000);
+
+            // 3초 후 애니메이션 적용
+            $(".txt2").delay(3000).animate({marginLeft:"300px"},1000);
+
+            $(".btn1").on("click",moveElement);
+
+            function moveElement(){
+                // 버튼1 누를 때마다 class 값이 txt3인 요소가 0.8초간 50px씩 이동
+                $(".txt3").animate({marginLeft:"+=50px"},800);
+
+                // stop이 실행되면 버튼1을 눌러도 애니메이션 동작 안함
+                $(".txt4").animate({marginLeft:"+=50px"},800);
+                $(".txt4").stop();
+
+                // stop(true,true)가 실행되면 버튼1 눌러도 애니메이션 종료시점 이동, css적용한것처럼 이동
+                $(".txt5").animate({marginLeft:"+=50px"},800);
+                $(".txt5").stop(true,true);
+            }
+        });
+    </script>
+    <style>
+        p{width:110px; text-align:center;}
+        .txt1{background-color:aqua;}
+        .txt2{background-color:pink;}
+        .txt3{background-color:orange;}
+        .txt4{background-color:green;}
+        .txt5{background-color:gold;}
+    </style>
+</head>
+<body>
+    <p class="txt1">효과1</p>
+    <p class="txt2">효과2<br>delay(3000)</p>
+    <p><button class="btn1">50px 전진</button></p>
+    <p class="txt3">효과3</p>
+    <p class="txt4">효과4<br>stop()</p>
+    <p class="txt5">효과5<br>stop(true,true)</p>
+</body>
+</html>
